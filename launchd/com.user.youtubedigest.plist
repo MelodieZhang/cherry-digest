@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+    "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.user.youtubedigest</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <!-- Update this path to point to your venv python after setup -->
+        <string>/Users/YOUR_USERNAME/Cherry/venv/bin/python3</string>
+        <string>/Users/YOUR_USERNAME/Cherry/main.py</string>
+    </array>
+
+    <!-- Run at 7:00 AM every day -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>7</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- API keys as environment variables (preferred over config.yaml) -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>GEMINI_API_KEY</key>
+        <string>YOUR_GEMINI_API_KEY</string>
+        <key>EMAIL_PASSWORD</key>
+        <string>YOUR_GMAIL_APP_PASSWORD</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    </dict>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/YOUR_USERNAME/Cherry</string>
+
+    <key>StandardOutPath</key>
+    <string>/Users/YOUR_USERNAME/Cherry/logs/launchd_stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/YOUR_USERNAME/Cherry/logs/launchd_stderr.log</string>
+
+    <!-- Retry after 60s if the job exits with a non-zero code -->
+    <key>ThrottleInterval</key>
+    <integer>60</integer>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+venv/
+output/
+logs/
+state.json
+__pycache__/
+*.pyc
+.DS_Store
+.claude/

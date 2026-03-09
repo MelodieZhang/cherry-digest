@@ -1,0 +1,40 @@
+channels:
+  - name: "Channel Name"
+    url: "https://www.youtube.com/@channelhandle"
+  # Add more channels below:
+  # - name: "Another Channel"
+  #   url: "https://www.youtube.com/@anotherhandle"
+
+# API keys: always use environment variables — never put real keys here.
+# Run: export GEMINI_API_KEY=AIza...
+# Or add to ~/.zshrc to make permanent.
+api_keys:
+  gemini: ""
+
+digest:
+  lookback_hours: 24          # How far back to scan for new videos
+  max_videos_per_run: 8       # Cap to keep digest readable
+  max_transcript_chars: 80000 # Truncate very long transcripts before sending to Gemini
+  skip_shorts: true           # Skip YouTube Shorts
+  min_duration_seconds: 180   # Skip videos shorter than 3 minutes
+
+gemini:
+  summarize_model: "gemini-3.1-flash-lite-preview"
+  # Use "gemini-3.1-pro-preview" for higher quality at higher cost
+
+email:
+  enabled: true
+  sender: "you@gmail.com"
+  recipient: "you@gmail.com"
+  # Password via env var: export EMAIL_PASSWORD="xxxx-xxxx-xxxx-xxxx"
+  # Generate one at: Google Account → Security → App Passwords
+
+output:
+  base_dir: "~/Cherry/output"
+  keep_days: 30           # Auto-prune state older than this
+
+logging:
+  level: "INFO"           # DEBUG | INFO | WARNING | ERROR
+  log_file: "~/Cherry/logs/digest.log"
+  max_bytes: 5242880      # 5 MB
+  backup_count: 3

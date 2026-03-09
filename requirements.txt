@@ -1,0 +1,11 @@
+# YouTube content fetching (no API key required)
+scrapetube==2.5.1
+youtube-transcript-api>=1.2.4
+
+# AI API (summarization + translation)
+google-genai>=1.0.0
+
+# Configuration & utilities
+PyYAML==6.0.2
+python-dateutil==2.9.0
+tenacity==9.0.0
