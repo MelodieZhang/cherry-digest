@@ -69,10 +69,6 @@ cp launchd/com.user.youtubedigest.plist ~/Library/LaunchAgents/
 launchctl load ~/Library/LaunchAgents/com.user.youtubedigest.plist
 ```
 
-## Cost
-
-Uses [Gemini 2.0 Flash-Lite](https://ai.google.dev/pricing) — approximately **$0.04–0.05/day** for a typical digest of 3–6 videos.
-
 ## Project structure
 
 ```
